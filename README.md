@@ -1,6 +1,6 @@
-Simple Dancer REST POC
+# Simple Dancer REST POC
 
-Requirement:
+## Requirement
 
 Host custom facts are set in a YAML file for the host under /etc/puppet/hieradata/hosts - for example:
 
@@ -19,17 +19,19 @@ Host custom facts are set in a YAML file for the host under /etc/puppet/hieradat
 
 Expose a REST API to allow host facts to be queried and custom facts to be set.
 
-Install:
+## Install
 
     cpan> install Dancer JSON
 
     $ git clone https://github.com/erwbgy/perl-custom_facts.git
 
-Run:
+## Server
 
     $ ./bin/app.pl
 
-Query existing custom facts:
+## Client
+
+### Query existing custom facts
 
     $ curl http://localhost:3000/custom_facts/testhost
     {
@@ -38,7 +40,7 @@ Query existing custom facts:
        }
     }
 
-Add new facts:
+### Add new facts
 
     $ curl -X POST \
       -H 'Accept: application/json' \
@@ -52,7 +54,7 @@ Add new facts:
        }
     }
 
-Update existing fact:
+### Update existing fact
 
     $ curl -X POST \
       -H 'Accept: application/json' \
