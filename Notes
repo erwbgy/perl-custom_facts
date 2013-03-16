@@ -1,1 +1,3 @@
+cpan> install Dancer JSON
+
 $ dancer -a custom_facts
