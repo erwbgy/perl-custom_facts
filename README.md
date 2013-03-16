@@ -1,5 +1,24 @@
 Simple Dancer REST POC
 
+Requirement:
+
+Host custom facts are set in a YAML file for the host under /etc/puppet/hieradata/hosts - for example:
+
+    $ cat testhost.yaml
+    classes:
+      - system
+    
+    system::facts:
+      envtype:
+        value: 'stage'
+      location:
+        value: 'location'
+      role:
+        value: 'webserver'
+
+
+Expose a REST API to allow host facts to be queried and custom facts to be set.
+
 Install:
 
     cpan> install Dancer JSON
